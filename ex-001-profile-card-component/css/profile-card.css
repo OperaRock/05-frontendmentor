@@ -1,0 +1,190 @@
+/******************************************************************************
+INTRODUÇÃO
+Nome do arquivo: profile-card.css
+Referenciado em: profile-card.html
+Autor: Carlos Roberto Valereano Junior
+Data de criação: 13-nov-2020
+-------------------------------------------------------------------------------
+
+# PROPÓSITO
+Reconstruir o desafio Profile card component do site frontendmentor.
+
+# REFERÊNCIAS
+[1] Profile card component
+https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ
+
+[2] CSS Backgrounds and Borders
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders
+
+[3] CSS Backgrounds and Borders Module Level 3
+https://drafts.csswg.org/css-backgrounds-3/
+
+[4] Tutorial: Learn how to use CSS Media Queries in less than 5 minutes
+https://www.youtube.com/watch?v=2KL-z9A56SQ
+
+[5] React with Frontend Mentor coding HTML & CSS
+https://www.youtube.com/watch?v=XQKRTdirzLQ
+
+[6] Boxicons
+https://boxicons.com/
+******************************************************************************/
+
+
+/******************************************************************************/
+/*                                   Colors                                   */
+/******************************************************************************/
+
+:root {
+
+    /* Primary */
+    --dark-cyan: hsl(185, 75%, 39%);
+    --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --dark-grayish-blue: hsl(227, 10%, 46%);
+
+    /* Neutral */
+    --dark-gray: hsl(0, 0%, 59%);
+}
+
+
+/******************************************************************************/
+/*                                   Body                                     */
+/******************************************************************************/
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1440px; /* desktop: 1440px */
+
+    /* Typography */
+    font-family: 'Kumbh Sans', sans-serif;
+
+    /* Background */
+    background: var(--dark-cyan);
+    background-image: 
+        url('../images/bg-pattern-top.svg'),
+        url('../images/bg-pattern-bottom.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: 980px;
+    background-position: -300px -450px, 1100px 600px;
+}
+
+/******************************************************************************/
+/*                                   Card                                     */
+/******************************************************************************/
+
+
+/** Card **********************************************************************/
+.card {
+    width: 375px;
+    height: 375px;
+    background-color: white;
+    border-radius: 1rem;
+    background-image: url('../images/bg-pattern-card.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+
+
+    /* Centering */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/** Avatar ********************************************************************/
+.avatar {
+    width: 120px;
+    height: 120px;
+
+    background-color: #aaa;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background-image: url('../images/image-victor.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    position: relative;
+    margin: auto;
+    top: 87px;    
+}
+
+
+/** Body **********************************************************************/
+.body {
+    position: relative;
+    top: 87px;
+    border-bottom: 1px solid #ddd;
+}
+
+/** User **********************************************************************/
+.user-info,
+.user-location {
+
+    padding-top: 1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.u-name, .u-age {
+    color: var(--very-dark-desaturated-blue);
+    font-size: 18px;
+    font-weight: 700;
+    padding-right: 1rem;
+}
+
+.u-age {
+    color: var(--dark-gray);
+}
+
+/** Location ******************************************************************/
+.user-location {
+    padding-top: 0.5rem;
+}
+
+.u-location {
+    color: var(--dark-gray);
+    font-size: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+
+/** Footer ********************************************************************/
+.footer {
+
+    position: relative;
+    top: 100px;
+    padding-top: 0.25rem;
+
+    display: flex;    
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats {
+    color: var(--very-dark-desaturated-blue);
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 0.25rem;
+}
+
+.title {
+    color: var(--dark-gray);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
