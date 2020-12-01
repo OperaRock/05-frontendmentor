@@ -1,0 +1,44 @@
+/******************************************************************************
+INTRODUÇÃO
+Nome do arquivo: faq-accordion-card.css
+Referenciado em: faq-accordion-card.html
+Autor: Carlos Roberto Valereano Junior
+Data de criação: 01-dez-2020
+-------------------------------------------------------------------------------
+
+# PROPÓSITO
+Reconstruir o desafio Profile card component do site frontendmentor.
+
+# REFERÊNCIAS
+[1] FAQ accordion card
+https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam
+
+[6] Boxicons
+https://boxicons.com/
+******************************************************************************/
+
+
+/******************************************************************************/
+/*                                   Colors                                   */
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/*                                   Body                                     */
+/******************************************************************************/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1440px;
+    /* desktop: 1440px */
+
+    /* Typography */
+    font-family: 'Kumbh Sans', sans-serif;
+}
