@@ -13,15 +13,36 @@ Reconstruir o desafio Profile card component do site frontendmentor.
 [1] FAQ accordion card
 https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam
 
-[6] Boxicons
-https://boxicons.com/
+[2] How to create a CSS-Only Accordion (Mobile Friendly) - HTML & CSS Tutorial
+https://www.youtube.com/watch?v=pzy_QStQaqA
+
+[3] Pure CSS Animated Gradient Background | HTML and CSS Tutorial
+https://www.youtube.com/watch?v=fBRzD6dwJfw
 ******************************************************************************/
 
 
 /******************************************************************************/
 /*                                   Colors                                   */
 /******************************************************************************/
+:root {
+    /* text */
+    --clr-vddb: hsl(238, 29%, 16%);
+    --clr-sr: hsl(14, 88%, 65%);
 
+    /* gradient */
+    --clr-sv: hsl(273, 75%, 66%);
+    --clr-sb: hsl(240, 73%, 65%);
+
+    /* neutral */
+    --clr-vdgb: hsl(237, 12%, 33%);
+    --clr-dgb: hsl(240, 6%, 50%);
+
+    /* dividers */
+    --clr-lgb: hsl(240, 5%, 91%);
+
+    /* background card */
+    --clr-white: #ffffff;
+}
 
 
 /******************************************************************************/
@@ -36,9 +57,108 @@ https://boxicons.com/
 }
 
 body {
-    max-width: 1440px;
-    /* desktop: 1440px */
+    height: 100vh;
+    max-width: 100vw;
+    padding: 3rem;
+
+    /* gradient background */
+    background: linear-gradient(var(--clr-sv), var(--clr-sb));
 
     /* Typography */
     font-family: 'Kumbh Sans', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/******************************************************************************/
+/*                                 Accordion                                  */
+/******************************************************************************/
+.accordion__container {
+    /* layout */
+    height: 810px;
+    max-width: 90rem;
+    
+    background-color: var(--clr-white);
+    border-radius: 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.accordion__sections {
+    padding: 1rem;
+}
+
+.accordion__sections div {
+    border-bottom: 1px solid var(--clr-lgb);    
+}
+
+.accordion__label,
+.accordion__content {
+    padding: 0.5rem 0;
+}
+
+.accordion__label {
+    display: block;
+    color: var(--clr-vdgb);
+    cursor: pointer;
+    position: relative;
+}
+
+.accordion__label:hover {
+    color: var(--clr-sr);
+}
+
+.accordion__label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background-image: url('../images/icon-arrow-down.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.4s;
+}
+
+.accordion__content {
+    color: var(--clr-dgb);
+    display: none;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    padding-right: 1rem;
+    width: 90%;
+}
+
+.accordion__input {
+    display: none;
+}
+
+.accordion__input:checked ~ .accordion__content {
+    display: block;
+}
+
+.accordion__input:checked ~ .accordion__label::after {
+    transform: translateY(-50%) rotate(0.5turn);
+}
+
+
+
+
+
+
+
+
+/******************************************************************************/
+/*                                 Attribution                                */
+/******************************************************************************/
+.attribution {
+    margin-top: auto;
+    justify-self: flex-end;
 }
