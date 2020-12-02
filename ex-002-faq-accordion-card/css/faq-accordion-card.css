@@ -93,8 +93,9 @@ body {
     padding: 1rem;
 }
 
-.accordion__sections div {
-    border-bottom: 1px solid var(--clr-lgb);    
+.accordion__sections > div {
+    border-bottom: 1px solid var(--clr-lgb);
+    padding: 1rem;    
 }
 
 .accordion__label,
@@ -144,10 +145,14 @@ body {
     display: block;
 }
 
+.accordion__input:checked~.accordion__label {
+    color: var(--clr-vddb);
+    font-weight: 700;
+}
+
 .accordion__input:checked ~ .accordion__label::after {
     transform: translateY(-50%) rotate(0.5turn);
 }
-
 
 
 
