@@ -18,6 +18,18 @@ https://www.youtube.com/watch?v=pzy_QStQaqA
 
 [3] Pure CSS Animated Gradient Background | HTML and CSS Tutorial
 https://www.youtube.com/watch?v=fBRzD6dwJfw
+
+[4] background-position
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/background-position
+
+[5] background-origin
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/background-origin
+
+[6] background-image
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/background-image
+
+[7] background-size
+https://developer.mozilla.org/en-US/docs/Web/CSS/background-size
 ******************************************************************************/
 
 
@@ -82,6 +94,11 @@ body {
     max-width: 90rem;
     
     background-color: var(--clr-white);
+    background-image: url('../images/illustration-woman-online-desktop.svg');
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-position: -12% 50%;
+    background-size: 45%;
     border-radius: 2rem;
 
     display: grid;
@@ -167,21 +184,24 @@ body {
     transform: translateY(-50%) rotate(0.5turn);
 }
 
-
+.accordion__image {
+    width: 40rem;
+    height: 100%;    
+}
 
 /******************************************************************************/
 /*                                 Images                                     */
 /******************************************************************************/
 .accordion__image-hero {
     position: relative;
-    left: -5rem;
-    z-index: 0;
+    left: -3rem;
+    transform: scale(1.3);
 }
 
-.accordion__image-box{
+.accordion__image-box {
     position: absolute;
     left: -5.5rem;
-    top: 16.5rem;
+    top: 16.5rem;    
     z-index: 1;
 }
 
