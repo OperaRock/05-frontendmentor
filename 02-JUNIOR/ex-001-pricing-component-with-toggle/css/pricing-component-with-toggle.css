@@ -1,0 +1,249 @@
+/******************************************************************************
+INTRODUÇÃO
+Nome do arquivo: pricing-component-with-toggle.css
+Referenciado em: pricing-component-with-toggle.html
+Autor: Carlos Roberto Valereano Junior
+Data de criação: 30-dez-2020
+-------------------------------------------------------------------------------
+
+# PROPÓSITO
+Reconstruir o desafio Profile card component do site frontendmentor.
+
+# REFERÊNCIAS
+[1] Pricing component with toggle
+https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC
+
+[2] Pricing Table Toggle - Design to HTML/CSS
+https://www.youtube.com/watch?v=NBkD-O7f4Bs
+******************************************************************************/
+
+
+
+
+
+/******************************************************************************/
+/*                                   Colors                                   */
+/*******************************************************************************
+PRIMARY
+    Linear Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%)
+
+NEUTRAL
+    Very Light Grayish Blue: hsl(240, 78%, 98%)
+    Light Grayish Blue: hsl(234, 14%, 74%) 
+    Grayish Blue: hsl(233, 13%, 49%) 
+    Dark Grayish Blue: hsl(232, 13%, 33%)
+*******************************************************************************/
+:root {
+    --clr-primary: linear-gradient(#a3a8f0, #696fdd);
+
+    --clr-vlgb: #f6f6fe;
+    --clr-lgb: #b3b5c6;
+    --clr-gb: #6d708d;
+    --clr-dgb: #494c5f;
+}
+
+
+
+
+
+/******************************************************************************/
+/*                                   General                                  */
+/******************************************************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--clr-vlgb);
+    background-image: url('../images/bg-bottom.svg'),
+                      url('../images/bg-top.svg');
+    background-repeat: no-repeat;
+    background-position: left bottom, right top;
+    color: var(--clr-dgb);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    min-height: 100vh;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: var(--clr-gb);
+}
+
+
+
+
+
+/******************************************************************************/
+/*                                   Container                                */
+/******************************************************************************/
+
+.container {
+    margin: auto;
+    max-width: 100%;
+    width: 1440px;
+}
+
+/** header ********************************************************************/
+.header {
+    color: var(--clr-lgb);
+    margin-bottom: 40px;
+}
+
+/** card-container ************************************************************/
+.card-container {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container .monthly{
+    display: none;
+}
+
+.card-container.show-annually .monthly {
+    display: block;
+}
+
+.card-container.show-annually .annually {
+    display: none;
+}
+
+/** card **********************************************************************/
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 10px;
+    width: 300px;
+}
+
+.card h4 {
+    margin: 0;
+}
+
+.card p {
+    color: var(--clr-dgb);
+    font-size: 4em;
+    margin: 15px 0;
+}
+
+.card ul {
+    border-top: 1px solid var(--clr-lgb);
+    padding: 0;
+    list-style-type: none;
+}
+
+.card ul li {
+    border-bottom: 1px solid var(--clr-gb);
+    color: var(--clr-gb);
+    padding: 15px 0;
+}
+
+.card button {    
+    background: linear-gradient(to right, #a3a8f0, #696fdd);
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding: 15px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/** offer *********************************************************************/
+.card.offer {
+    background: linear-gradient(to right, #a3a8f0, #696fdd);
+    color: #ffffff;
+    transform: scale(1.15);
+}
+
+.card.offer p {
+    color: var(--clr-vlgb);
+}
+
+.card.offer > * {
+    transform: scale(0.87);
+}
+
+.card.offer ul li{
+    color: #ffffff;
+}
+
+.card.offer button {
+    background: #ffffff;
+    color: #696fdd;
+}
+
+.card.offer ul,
+.card.offer ul li {
+    border-color: var(--clr-vlgb);
+}
+
+/** header ********************************************************************/
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header label {
+    background: var(--clr-primary);
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+    height: 30px;
+    width: 60px;
+}
+
+.header label .ball {
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    height: 25px;
+    width: 25px;
+    transition: transform 0.3s ease;
+}
+
+.header input {
+    position: absolute;
+    left: -9999px;  
+}
+
+.header input:checked + label .ball{
+    transform: translateX(30px);
+}
+
+
+
+
+/******************************************************************************/
+/*                               Media Queries                                */
+/******************************************************************************/
+
+@media screen and (max-width: 930px) {
+    .card-container {
+        flex-direction: column;
+    }
+
+    .card.offer {
+        transform: scale(1);
+    }
+
+    .card.offer >* {
+        transform: scale(1);
+    }
+}
